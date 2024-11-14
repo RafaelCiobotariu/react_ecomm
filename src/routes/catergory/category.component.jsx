@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, Fragment } from "react";
-import { useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 
 import ProductCard from "../../components/product-card/product-card.component";
 
@@ -19,6 +19,9 @@ const Category = () => {
   return (
     <Fragment>
       <h2 className="category-title">{category.toUpperCase()}</h2>
+      <Link to="/" className="back-button">
+        Back to categories
+      </Link>
       <div className="category-container">
         {products &&
           products.map((product) => (
